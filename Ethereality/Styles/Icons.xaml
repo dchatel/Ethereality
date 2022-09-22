@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:e="clr-namespace:Ethereality">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Default.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="e:Icon">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="e:Icon">
+                    <Path Data="{Binding RelativeSource={RelativeSource TemplatedParent},
+                                         Path=Data}"
+                          Fill="{TemplateBinding Foreground}"
+                          Stretch="Uniform" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

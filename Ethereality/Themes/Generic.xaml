@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="pack://application:,,,/Ethereality;component/Themes/Default.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/Ethereality;component/Styles/Icons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Ethereality;component/Styles/Buttons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Ethereality;component/Styles/TextBoxes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Ethereality;component/Styles/EtherWindow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

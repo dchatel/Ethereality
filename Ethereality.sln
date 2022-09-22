@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ethereality", "Ethereality\Ethereality.csproj", "{630E4935-A6B4-4B5B-9399-4FE24FB9DC00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ethereality_Demo", "Ethereality_Demo\Ethereality_Demo.csproj", "{62148EA3-7305-4010-8F50-A986E0FEEBCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{630E4935-A6B4-4B5B-9399-4FE24FB9DC00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630E4935-A6B4-4B5B-9399-4FE24FB9DC00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630E4935-A6B4-4B5B-9399-4FE24FB9DC00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630E4935-A6B4-4B5B-9399-4FE24FB9DC00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62148EA3-7305-4010-8F50-A986E0FEEBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62148EA3-7305-4010-8F50-A986E0FEEBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62148EA3-7305-4010-8F50-A986E0FEEBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62148EA3-7305-4010-8F50-A986E0FEEBCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A176E14F-AD1E-4562-9973-0D6BB8AEA4B4}
+	EndGlobalSection
+EndGlobal

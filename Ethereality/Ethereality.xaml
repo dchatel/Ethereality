@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="Themes/Default.xaml" />
+
+        <ResourceDictionary Source="Styles/Icons.xaml" />
+        <ResourceDictionary Source="Styles/Buttons.xaml" />
+        <ResourceDictionary Source="Styles/Rating.xaml" />
+        <ResourceDictionary Source="Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="Styles/ListBoxes.xaml" />
+        <ResourceDictionary Source="Styles/TextBlocks.xaml" />
+        <ResourceDictionary Source="Styles/TextBoxes.xaml" />
+        <ResourceDictionary Source="Styles/ComboBox.xaml" />
+        <ResourceDictionary Source="Styles/DatePickers.xaml" />
+        <ResourceDictionary Source="Styles/EtherWindow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

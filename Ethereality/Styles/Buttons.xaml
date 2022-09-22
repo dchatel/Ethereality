@@ -1,0 +1,203 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="clr-namespace:Ethereality.Converters">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Default.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Button">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+    </Style>
+
+    <Style x:Key="Button.Flat"
+           BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Brush.Button.Default}" />
+        <Setter Property="Foreground" Value="{StaticResource Brush.Button.Foreground}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}"
+                          SnapsToDevicePixels="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <ContentPresenter Grid.Row="1"
+                                          Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Focusable="False"
+                                          IsHitTestVisible="False"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Hover}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Pressed}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Disabled}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Button.Flat.Delicate"
+           BasedOn="{StaticResource Button.Flat}"
+           TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="Button.Flat.Delicate.Alert"
+           BasedOn="{StaticResource Button.Flat.Delicate}"
+           TargetType="Button">
+        <Setter Property="BorderBrush" Value="Blue" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource AlertBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Pressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Button.Circle"
+           BasedOn="{StaticResource {x:Type Button}}"
+           TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource Brush.Button.Default}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="4*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse x:Name="circle"
+                                 Grid.RowSpan="3"
+                                 Grid.ColumnSpan="3"
+                                 Fill="{TemplateBinding Background}">
+                            <Ellipse.Width>
+                                <MultiBinding Converter="{c:MathConverter min(a\,b)}">
+                                    <Binding Path="ActualWidth"
+                                             RelativeSource="{RelativeSource AncestorType=Grid}" />
+                                    <Binding Path="ActualHeight"
+                                             RelativeSource="{RelativeSource AncestorType=Grid}" />
+                                </MultiBinding>
+                            </Ellipse.Width>
+                            <Ellipse.Height>
+                                <MultiBinding Converter="{c:MathConverter min(a\,b)}">
+                                    <Binding Path="ActualWidth"
+                                             RelativeSource="{RelativeSource AncestorType=Grid}" />
+                                    <Binding Path="ActualHeight"
+                                             RelativeSource="{RelativeSource AncestorType=Grid}" />
+                                </MultiBinding>
+                            </Ellipse.Height>
+                            <Ellipse.Effect>
+                                <DropShadowEffect BlurRadius="15"
+                                                  ShadowDepth="2" />
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          Grid.Row="1"
+                                          Grid.Column="1"
+                                          Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Focusable="False"
+                                          IsHitTestVisible="False"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Hover}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Pressed}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Disabled}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Button.Circle.Delicate"
+           BasedOn="{StaticResource Button.Circle}"
+           TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+    </Style>
+
+    <Style x:Key="Button.Circle.Delicate.Alert"
+           BasedOn="{StaticResource Button.Circle}"
+           TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource AlertBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Pressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ToggleButton.Flat"
+           TargetType="ToggleButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Padding" Value="10,5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border Margin="{TemplateBinding Margin}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="15">
+                        <ContentPresenter x:Name="PART_ContentPresenter" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Hover}" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Default}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource Brush.Button.Pressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
